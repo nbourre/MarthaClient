@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarthaClient", "MarthaClient\MarthaClient.csproj", "{D367B7DC-FF2F-45BE-8D33-8D4385673638}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D367B7DC-FF2F-45BE-8D33-8D4385673638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D367B7DC-FF2F-45BE-8D33-8D4385673638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D367B7DC-FF2F-45BE-8D33-8D4385673638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D367B7DC-FF2F-45BE-8D33-8D4385673638}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BB47565-C3BD-4C60-84EE-FEC1FE10C6FF}
+	EndGlobalSection
+EndGlobal
