@@ -5,8 +5,10 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MarthaClient.ViewModels
@@ -32,7 +34,15 @@ namespace MarthaClient.ViewModels
 
         private async void Test(string obj)
         {
-            await marthaProcessor.ExecuteQuery("products_all");
+            var response = await marthaProcessor.ExecuteQuery("products_all");
+
+            foreach (object o in response.Data)
+            {
+                var stringContent = o.ToString();
+
+                var tempProduct = JsonSerializer.Deserialize<Product>(stringContent, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                Console.WriteLine(tempProduct);
+            }
         }
 
         private void Connect(string obj)
