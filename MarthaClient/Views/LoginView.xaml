@@ -10,6 +10,7 @@
         <StackPanel>
             <TextBlock Text="Login view!"/>
             <Button Content="Go!" Command="{Binding ConnectCommand}"/>
+            <Button Content="Test!" Command="{Binding TestCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
