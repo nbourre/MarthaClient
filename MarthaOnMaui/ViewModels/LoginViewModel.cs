@@ -14,16 +14,34 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace MarthaOnMaui.ViewModels
 {
+    /// <summary>
+    /// Src : https://www.youtube.com/watch?v=z4_EQ2wM6No
+    /// </summary>
     public class LoginViewModel : BaseViewModel
     {
-        [ObservableProperty]
         private string username;
 
-        [ObservableProperty]
+        public string Username
+        {
+            get { return username; }
+            set {
+                username = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string password;
 
+        public string Password
+        {
+            get { return password; }
+            set { 
+                password = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public DelegateCommand<string> ConnectCommand { get; }
+        public DelegateCommand<string> LoginCommand { get; }
         public DelegateCommand<string> TestCommand { get; set; }
 
         MarthaProcessor marthaProcessor;
@@ -31,7 +49,7 @@ namespace MarthaOnMaui.ViewModels
         NavigationStore _navigationStore;
 
         public LoginViewModel(NavigationStore navigationStore) {
-            ConnectCommand = new DelegateCommand<string>(Connect);
+            LoginCommand = new DelegateCommand<string>(Login);
             TestCommand = new DelegateCommand<string>(Test);
 
             _navigationStore = navigationStore;
@@ -53,7 +71,7 @@ namespace MarthaOnMaui.ViewModels
             }
         }
 
-        private void Connect(string obj)
+        private void Login(string obj)
         {
             _navigationStore.CurrentViewModel = new QueryBuilderViewModel(_navigationStore);
         }

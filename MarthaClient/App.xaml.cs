@@ -19,8 +19,6 @@ namespace MarthaClient
     /// </summary>
     public partial class App : Application
     {
-        NavigationService ns;
-
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
