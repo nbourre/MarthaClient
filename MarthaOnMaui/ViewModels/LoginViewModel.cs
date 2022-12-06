@@ -10,11 +10,19 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using MarthaService;
 using Models;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace MarthaOnMaui.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        [ObservableProperty]
+        private string username;
+
+        [ObservableProperty]
+        private string password;
+
+
         public DelegateCommand<string> ConnectCommand { get; }
         public DelegateCommand<string> TestCommand { get; set; }
 

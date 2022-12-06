@@ -62,6 +62,7 @@
 	  <None Remove="State\" />
 	  <None Remove="State\Authenticators\" />
 	  <None Remove="State\INavigators\" />
+	  <None Remove="Microsoft.Toolkit.Mvvm" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Commands\" />
@@ -76,5 +77,16 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\MarthaService\MarthaService.csproj" />
 	  <ProjectReference Include="..\Models\Models.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Views\LoginPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\HomePage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
 	</ItemGroup>
 </Project>

@@ -55,7 +55,8 @@ namespace MarthaService
             var pw = Configuration["pwd"];
             var userpw = Base64Encode($"{user}:{pw}");
 
-            var baseAddress = Configuration["baseAddress"];
+            // Workaround for MacOS...
+            var baseAddress = Configuration["baseAddress"] ?? "http://martha.jh.shawinigan.info";
 
             var uri = new Uri(baseAddress);
 
