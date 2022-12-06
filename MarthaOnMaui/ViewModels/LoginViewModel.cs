@@ -71,7 +71,7 @@ namespace MarthaOnMaui.ViewModels
             }
         }
 
-        private void Login(string obj)
+        private async void Login(string obj)
         {
             _navigationStore.CurrentViewModel = new QueryBuilderViewModel(_navigationStore);
         }
