@@ -9,7 +9,7 @@ namespace MarthaService
     public class MarthaResponse
     {
         public bool Success { get; set; }
-        public IList<object>? Data { get; set; }
+        public IList<object> Data { get; set; }
 
     }
 }

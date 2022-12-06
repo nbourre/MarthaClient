@@ -1,11 +1,11 @@
-﻿using MarthaClient.ViewModels;
+﻿using MarthaOnMaui.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarthaClient.Stores
+namespace MarthaOnMaui.Stores
 {
     public class NavigationStore
     {

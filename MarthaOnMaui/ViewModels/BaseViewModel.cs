@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MarthaClient.ViewModels
+namespace MarthaOnMaui.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

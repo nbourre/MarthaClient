@@ -11,7 +11,7 @@ namespace MarthaService
     public class MarthaProcessor
     {
         private static readonly MarthaProcessor instance = new MarthaProcessor();
-        private HttpClient httpClient = new HttpClient();
+        private readonly HttpClient httpClient = new HttpClient();
 
         IConfiguration Configuration;
 
@@ -55,7 +55,11 @@ namespace MarthaService
             var pw = Configuration["pwd"];
             var userpw = Base64Encode($"{user}:{pw}");
 
-            httpClient.BaseAddress = new Uri(Configuration["baseAddress"]);
+            var baseAddress = Configuration["baseAddress"];
+
+            var uri = new Uri(baseAddress);
+
+            httpClient.BaseAddress = uri;
             httpClient.DefaultRequestHeaders.Add("auth", userpw);
         }
 

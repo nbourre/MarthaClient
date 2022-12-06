@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace MarthaClient.Commands
+namespace MarthaOnMaui.Commands
 {
     public class DelegateCommand<T> : ICommand
     {

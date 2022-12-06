@@ -1,12 +1,11 @@
-﻿using MarthaClient.Commands;
-using MarthaClient.Stores;
+﻿using MarthaOnMaui.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-namespace MarthaClient.ViewModels
+namespace MarthaOnMaui.ViewModels
 {
     /// <summary>
     /// Source : https://www.youtube.com/watch?v=N26C_Cq-gAY

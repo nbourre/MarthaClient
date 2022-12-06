@@ -28,4 +28,9 @@
 	  </None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MarthaProcessor.cs">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Compile>
+	</ItemGroup>
 </Project>

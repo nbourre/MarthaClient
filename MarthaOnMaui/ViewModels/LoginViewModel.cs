@@ -1,7 +1,5 @@
-﻿using MarthaClient.Commands;
-using MarthaClient.Stores;
-using MarthaService;
-using Models;
+﻿using MarthaOnMaui.Commands;
+using MarthaOnMaui.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +8,10 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using MarthaService;
+using Models;
 
-namespace MarthaClient.ViewModels
+namespace MarthaOnMaui.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {

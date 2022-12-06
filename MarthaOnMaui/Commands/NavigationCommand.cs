@@ -1,12 +1,12 @@
-﻿using MarthaClient.Stores;
-using MarthaClient.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MarthaOnMaui.Stores;
+using MarthaOnMaui.ViewModels;
 
-namespace MarthaClient.Commands
+namespace MarthaOnMaui.Commands
 {
     /// <summary>
     /// Commande permettant la navigation entre les ViewModels

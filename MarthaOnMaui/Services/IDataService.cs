@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarthaClient.Services
+namespace MarthaOnMaui.Services
 {
     internal interface IDataService<T>
     {

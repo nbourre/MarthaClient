@@ -1,12 +1,12 @@
-﻿using MarthaClient.Commands;
-using MarthaClient.Stores;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MarthaOnMaui.Commands;
+using MarthaOnMaui.Stores;
 
-namespace MarthaClient.ViewModels
+namespace MarthaOnMaui.ViewModels
 {
     public class QueryBuilderViewModel : BaseViewModel
     {
