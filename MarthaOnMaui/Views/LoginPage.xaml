@@ -9,6 +9,7 @@
             <RowDefinition Height="220"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Path Data="m54.73,35.825l687,0l0,367.97086c-185.5,131 -343.5,140.20365 -687,60.54249l0,-428.51335z" Stroke="#ffff" Fill="#2ecc71" />
@@ -75,8 +76,11 @@
                     <Label Text="Sign Up" TextColor="#1d8348" FontAttributes="Bold" FontSize="Small"/>
                 </StackLayout>
 
+                
+
             </StackLayout>
+            
         </Grid>
-        
+        <Button Grid.Row="3" Text="Test Command" Command="{Binding TestCommand}"/>
     </Grid>
 </ContentPage>

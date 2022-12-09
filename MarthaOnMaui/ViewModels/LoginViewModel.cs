@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using MarthaService;
 using Models;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Maui.Controls.Platform.Compatibility;
 
 namespace MarthaOnMaui.ViewModels
 {
@@ -55,19 +56,21 @@ namespace MarthaOnMaui.ViewModels
             _navigationStore = navigationStore;
 
             marthaProcessor = MarthaProcessor.Instance;
+
+            TestCommand.Execute("");
             
         }
 
         private async void TestAsync(string obj)
         {
-            var response = await marthaProcessor.ExecuteQueryAsync("products_all");
+            var param = "{\"prodName\":\"Chef\"}";
+            var response = await marthaProcessor.ExecuteQueryAsync("products_byName", param);
 
-            foreach (object o in response.Data)
+            var list = await MarthaResponseConverter<Product>.ConvertAsync(response);
+
+            foreach (var o in list)
             {
-                var stringContent = o.ToString();
-
-                var tempProduct = JsonSerializer.Deserialize<Product>(stringContent, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                Console.WriteLine(tempProduct);
+                Console.WriteLine(o.ToString());
             }
         }
 
