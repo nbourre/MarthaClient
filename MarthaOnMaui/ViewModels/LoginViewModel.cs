@@ -50,7 +50,7 @@ namespace MarthaOnMaui.ViewModels
 
         public LoginViewModel(NavigationStore navigationStore) {
             LoginCommand = new DelegateCommand<string>(Login);
-            TestCommand = new DelegateCommand<string>(Test);
+            TestCommand = new DelegateCommand<string>(TestAsync);
 
             _navigationStore = navigationStore;
 
@@ -58,9 +58,9 @@ namespace MarthaOnMaui.ViewModels
             
         }
 
-        private async void Test(string obj)
+        private async void TestAsync(string obj)
         {
-            var response = await marthaProcessor.ExecuteQuery("products_all");
+            var response = await marthaProcessor.ExecuteQueryAsync("products_all");
 
             foreach (object o in response.Data)
             {

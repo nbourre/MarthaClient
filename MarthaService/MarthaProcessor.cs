@@ -71,7 +71,7 @@ namespace MarthaService
         /// <param name="param">Format JSON {"nomParam" : "valeurParam" [, ...]}</param>
         /// <returns>Une MarthaResponse</returns>
         /// <exception cref="Exception"></exception>
-        public async Task<MarthaResponse> ExecuteQuery(string queryName, string param = "{}")
+        public async Task<MarthaResponse> ExecuteQueryAsync(string queryName, string param = "{}")
         {
             var url = $"queries/{queryName}/execute";
             var httpContent = new StringContent(param);

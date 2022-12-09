@@ -34,7 +34,7 @@ namespace MarthaClient.ViewModels
 
         private async void Test(string obj)
         {
-            var response = await marthaProcessor.ExecuteQuery("products_all");
+            var response = await marthaProcessor.ExecuteQueryAsync("products_all");
 
             foreach (object o in response.Data)
             {
