@@ -74,10 +74,10 @@ namespace MarthaService
         public async Task<MarthaResponse> ExecuteQueryAsync(string queryName, string param = "{}")
         {
             var url = $"queries/{queryName}/execute";
-            var httpContent = new StringContent(param);
+            var httpContent = new StringContent(param, Encoding.UTF8, "application/json");
 
            
-            using (var response = await httpClient.PostAsJsonAsync(url, httpContent))
+            using (var response = await httpClient.PostAsync(url, httpContent))
             {
                 if (response.IsSuccessStatusCode)
                 {

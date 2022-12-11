@@ -63,7 +63,7 @@ namespace MarthaOnMaui.ViewModels
 
         private async void TestAsync(string obj)
         {
-            var param = "{\"prodName\":\"Chef\"}";
+            var param = "{\"prodName\":\"chef\"}";
             var response = await marthaProcessor.ExecuteQueryAsync("products_byName", param);
 
             var list = await MarthaResponseConverter<Product>.ConvertAsync(response);
