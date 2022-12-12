@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarthaOnMaui", "MarthaOnMau
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarthaClient", "MarthaClient\MarthaClient.csproj", "{24132F77-476B-450D-B83F-F9B736397C8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarthaOnMauiTests", "MarthaOnMauiTests\MarthaOnMauiTests.csproj", "{42C7274D-350B-4074-8BAD-5FEE2B0A1EEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{24132F77-476B-450D-B83F-F9B736397C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24132F77-476B-450D-B83F-F9B736397C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24132F77-476B-450D-B83F-F9B736397C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C7274D-350B-4074-8BAD-5FEE2B0A1EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C7274D-350B-4074-8BAD-5FEE2B0A1EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C7274D-350B-4074-8BAD-5FEE2B0A1EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C7274D-350B-4074-8BAD-5FEE2B0A1EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

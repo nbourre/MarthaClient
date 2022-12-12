@@ -26,8 +26,11 @@ namespace MarthaOnMaui.ViewModels
             set => SetProperty(ref password, value);
         }
 
+        List<Product> products;
+
         public DelegateCommand LoginCommand { get; }
-        public DelegateCommand TestCommand { get; set; }
+        public AsyncDelegateCommand TestCommand { get; set; }
+        public List<Product> Products { get => products; set => products = value; }
 
         MarthaProcessor marthaProcessor;
 
@@ -35,7 +38,7 @@ namespace MarthaOnMaui.ViewModels
 
         public LoginViewModel(NavigationStore navigationStore) {
             LoginCommand = new DelegateCommand(LoginAsync);
-            TestCommand = new DelegateCommand(TestAsync);
+            TestCommand = new AsyncDelegateCommand(TestAsync);
 
             _navigationStore = navigationStore;
 
@@ -45,14 +48,14 @@ namespace MarthaOnMaui.ViewModels
             
         }
 
-        private async void TestAsync()
+        public async Task TestAsync()
         {
             var param = "{\"prodName\":\"chef\"}";
             var response = await marthaProcessor.ExecuteQueryAsync("products_byName", param);
 
-            var list = await MarthaResponseConverter<Product>.ConvertAsync(response);
+            Products = await MarthaResponseConverter<Product>.ConvertAsync(response);
 
-            foreach (var o in list)
+            foreach (var o in Products)
             {
                 Console.WriteLine(o.ToString());
             }
