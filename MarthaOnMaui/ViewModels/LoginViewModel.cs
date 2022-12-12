@@ -1,17 +1,7 @@
 ﻿using MarthaOnMaui.Commands;
 using MarthaOnMaui.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
 using MarthaService;
 using Models;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Maui.Controls.Platform.Compatibility;
 
 namespace MarthaOnMaui.ViewModels
 {
@@ -25,10 +15,7 @@ namespace MarthaOnMaui.ViewModels
         public string Username
         {
             get { return username; }
-            set {
-                username = value;
-                OnPropertyChanged();
-            }
+            set => SetProperty(ref username, value);
         }
 
         private string password;
@@ -36,22 +23,19 @@ namespace MarthaOnMaui.ViewModels
         public string Password
         {
             get { return password; }
-            set { 
-                password = value;
-                OnPropertyChanged();
-            }
+            set => SetProperty(ref password, value);
         }
 
-        public DelegateCommand<string> LoginCommand { get; }
-        public DelegateCommand<string> TestCommand { get; set; }
+        public DelegateCommand LoginCommand { get; }
+        public DelegateCommand TestCommand { get; set; }
 
         MarthaProcessor marthaProcessor;
 
         NavigationStore _navigationStore;
 
         public LoginViewModel(NavigationStore navigationStore) {
-            LoginCommand = new DelegateCommand<string>(Login);
-            TestCommand = new DelegateCommand<string>(TestAsync);
+            LoginCommand = new DelegateCommand(LoginAsync);
+            TestCommand = new DelegateCommand(TestAsync);
 
             _navigationStore = navigationStore;
 
@@ -61,7 +45,7 @@ namespace MarthaOnMaui.ViewModels
             
         }
 
-        private async void TestAsync(string obj)
+        private async void TestAsync()
         {
             var param = "{\"prodName\":\"chef\"}";
             var response = await marthaProcessor.ExecuteQueryAsync("products_byName", param);
@@ -74,9 +58,9 @@ namespace MarthaOnMaui.ViewModels
             }
         }
 
-        private async void Login(string obj)
+        private async void LoginAsync()
         {
-            _navigationStore.CurrentViewModel = new QueryBuilderViewModel(_navigationStore);
+            _navigationStore.CurrentViewModel = await Task.Run(() => new QueryBuilderViewModel(_navigationStore));
         }
     }
 }

@@ -44,4 +44,41 @@ namespace MarthaOnMaui.Commands
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
     }
+
+    public class DelegateCommand : ICommand
+    {
+        protected Func<bool> _canExecute;
+        protected Action _execute;
+
+        public event EventHandler CanExecuteChanged;
+
+        public DelegateCommand(Action execute) : this(execute, null)
+        {
+
+        }
+
+        public DelegateCommand(Action execute, Func<bool> canExecute)
+        {
+            _canExecute = canExecute;
+            _execute = execute;
+        }
+
+        public virtual bool CanExecute(object parameter)
+        {
+            if (_canExecute == null)
+                return true;
+
+            return _canExecute();
+        }
+
+        public void Execute(object parameter)
+        {
+            _execute();
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
+    }
 }

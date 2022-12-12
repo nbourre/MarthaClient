@@ -20,7 +20,7 @@ public partial class App : Application
         NavigationStore navigationStore = new();
 
         navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
-        MainPage.BindingContext = new MainViewModel(navigationStore);
+        MainPage.BindingContext = navigationStore.CurrentViewModel;
         base.OnStart();
     }
 }

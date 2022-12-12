@@ -4,6 +4,7 @@ using System.Net.Http.Json;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace MarthaService
 {
@@ -92,8 +93,15 @@ namespace MarthaService
                     throw new Exception(response.ReasonPhrase);
                 }
             }
-
-
         }
+
+        /// <summary>
+        /// Execute a query
+        /// </summary>
+        /// <param name="queryName">Nom du Query sur Martha</param>
+        /// <param name="jso">Objet JSON {"nomParam" : "valeurParam" [, ...]}</param>
+        /// <returns>Une MarthaResponse</returns>
+        /// <exception cref="Exception"></exception>
+        public async Task<MarthaResponse> ExecuteQueryAsync(string queryName, JsonObject jso) => await ExecuteQueryAsync(queryName, jso.ToString());
     }
 }

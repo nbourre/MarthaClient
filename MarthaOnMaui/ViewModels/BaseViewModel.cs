@@ -4,7 +4,7 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace MarthaOnMaui.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : ObservableObject
     {
 
         private bool isBusy;
@@ -12,28 +12,22 @@ namespace MarthaOnMaui.ViewModels
         public bool IsBusy
         {
             get => isBusy;
-            set { 
-                isBusy= value;
-                OnPropertyChanged();
-            }
+            set => SetProperty(ref isBusy, value);
         }
 
         private string title;
 
         public string Title
         {
-            get { return title; }
-            set {
-                title = value;
-                OnPropertyChanged();
-            }
+            get => title;
+            set => SetProperty(ref title, value);
         }
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
     }
 }
